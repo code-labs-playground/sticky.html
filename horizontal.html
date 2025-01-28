@@ -1,91 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Horizontal</title>
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Scroll with Snapping</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-            #scroll-port {
-                width: 400px;
-                height: 300px;
-                background-color: white;
-                border: 3px solid gray;
-                overflow-x: scroll;
-                scroll-snap-type: x mandatory; /* For snap enabling */
-                scroll-behavior: smooth;
-                white-space: nowrap;
-                margin: 0 auto;
-            }
+        body {
+            font-family: Arial, sans-serif;
+        }
 
-            .card {
-                position: relative;
-                width: 400px;
-                height: 300px;
-                scroll-snap-align: start; /* Marking for snap start */
-                margin: 0;
-                padding: 0;
-                display: inline-block;
-            }
+        #scroll-port {
+            width: 400px;
+            height: 300px;
+            background-color: white;
+            border: 3px solid gray;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory; /* Enables snapping */
+            scroll-behavior: smooth;
+            display: flex;
+            white-space: nowrap;
+            margin: 0 auto;
+        }
 
-            .vertical-text {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 40px;
-                height: 100%;
-                background-color: lightblue;
-                writing-mode: vertical-rl;
-                text-align: center;
-                font-size: 1rem;
-                font-weight: bold;
-                transform: rotate(180deg);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 2;
-            }
+        .card {
+            position: relative;
+            width: 400px;
+            height: 300px;
+            scroll-snap-align: start; /* Snap effect */
+            flex-shrink: 0; /* For Prevents shrinking */
+        }
 
-            .image {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                display: block;
-            }
-        </style>
+        .vertical-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 100%;
+            background-color: lightblue;
+            writing-mode: vertical-rl;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: bold;
+            transform: rotate(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
 
-    </head>
-    <body>
-        <h1>Horizontal Scroll with Snapping</h1>
-        <div id="scroll-port">
-            // Card 01
-            <div class="card">
-                <div class="vertical-text">1. Lobby Area</div>
-                <img class="image" src="image/01.jpg" alt="image-01">
-            </div>
+        .image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            padding-left: 40px;
+        }
+    </style>
+</head>
+<body>
+<h1 style="text-align: center;">Horizontal Scroll with Snapping</h1>
+<div id="scroll-port">
+    <!-- Card 01 -->
+    <div class="card">
+        <div class="vertical-text">1. Lobby Area</div>
+        <img class="image" src="image/01.jpg" alt="image-01">
+    </div>
 
-            // Card 02
-            <div class="card">
-                <div class="vertical-text">2. Lobby Area</div>
-                <img class="image" src="image/02.jpg" alt="image-02">
-            </div>
+    <!-- Card 02 -->
+    <div class="card">
+        <div class="vertical-text">2. Lobby Area</div>
+        <img class="image" src="image/02.jpg" alt="image-02">
+    </div>
 
-            // Card 03
-            <div class="card">
-                <div class="vertical-text">3. Design area</div>
-                <img class="image" src="image/03.jpg" alt="image-03">
-            </div>
+    <!-- Card 03 -->
+    <div class="card">
+        <div class="vertical-text">3. Design Area</div>
+        <img class="image" src="image/03.jpg" alt="image-03">
+    </div>
 
-            // Card 04
-            <div class="card">
-                <div class="vertical-text">4. Meeting Room</div>
-                <img class="image" src="image/04.jpg" alt="image-04">
-            </div>
-
-        </div>
-    </body>
+    <!-- Card 04 -->
+    <div class="card">
+        <div class="vertical-text">4. Meeting Room</div>
+        <img class="image" src="image/04.jpg" alt="image-04">
+    </div>
+</div>
+</body>
 </html>
