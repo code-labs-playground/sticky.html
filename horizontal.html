@@ -15,39 +15,49 @@
                 height: 300px;
                 background-color: white;
                 border: 3px solid gray;
-                display: flex;
                 overflow-x: scroll;
-                margin: 0;
-
+                scroll-snap-type: x mandatory; /* For snap enabling */
+                scroll-behavior: smooth;
+                white-space: nowrap;
+                margin: 0 auto;
             }
 
-            #card {
-                width: 100%;
-                height: 100%;
-                background-color: lightgreen;
-                /*position: absolute;*/
+            .card {
+                position: relative;
+                width: 400px;
+                height: 300px;
+                scroll-snap-align: start; /* Marking for snap start */
+                margin: 0;
+                padding: 0;
+                display: inline-block;
             }
 
-            #card > h1 {
-                font-size: 1.7rem;
-                rotate: 270deg;
-                margin: 0;
-                background-color: lightblue;
-                padding-left: 10px;
-                /*padding: 10px;*/
-                position: sticky;
-                text-align: left;
-                display: inline-flex;
+            .vertical-text {
+                position: absolute;
+                top: 0;
                 left: 0;
-                bottom: 0;
-
+                width: 40px;
+                height: 100%;
+                background-color: lightblue;
+                writing-mode: vertical-rl;
+                text-align: center;
+                font-size: 1rem;
+                font-weight: bold;
+                transform: rotate(180deg);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 2;
             }
 
             .image {
-                width: 400px;
-                height: 300px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
             }
         </style>
+
     </head>
     <body>
         <h1>Horizontal Scroll with Snapping</h1>
