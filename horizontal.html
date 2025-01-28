@@ -4,6 +4,12 @@
         <meta charset="UTF-8">
         <title>Horizontal</title>
         <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
             #scroll-port {
                 width: 400px;
                 height: 300px;
@@ -44,11 +50,30 @@
         </style>
     </head>
     <body>
-        <h1>Horizontal</h1>
+        <h1>Horizontal Scroll with Snapping</h1>
         <div id="scroll-port">
-            <div id="card">
-                <h1>I am going to stick</h1>
-                <img class="image" src="image/01.jpg" alt="01">
+            // Card 01
+            <div class="card">
+                <div class="vertical-text">1. Lobby Area</div>
+                <img class="image" src="image/01.jpg" alt="image-01">
+            </div>
+
+            // Card 02
+            <div class="card">
+                <div class="vertical-text">2. Lobby Area</div>
+                <img class="image" src="image/02.jpg" alt="image-02">
+            </div>
+
+            // Card 03
+            <div class="card">
+                <div class="vertical-text">3. Design area</div>
+                <img class="image" src="image/03.jpg" alt="image-03">
+            </div>
+
+            // Card 04
+            <div class="card">
+                <div class="vertical-text">4. Meeting Room</div>
+                <img class="image" src="image/04.jpg" alt="image-04">
             </div>
 
         </div>
